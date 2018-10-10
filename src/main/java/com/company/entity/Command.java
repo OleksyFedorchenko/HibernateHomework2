@@ -4,9 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Setter
 @Getter
@@ -19,6 +17,7 @@ public class Command extends BaseEntity {
     @Column(name = "team_name", nullable = false, unique = true)
     private String name;
 
-    @Column(name = "country_id", nullable = false, unique = false)
-    private int countryId;
+    @ManyToOne
+    @JoinColumn(name = "country_id")
+    private Country country;
 }
