@@ -1,8 +1,6 @@
 package com.company.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +11,10 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString(callSuper = true, exclude = "commands")
+@AllArgsConstructor
+@Builder
+
 
 @Entity
 @Table(name = "countries")
